@@ -1,7 +1,7 @@
 # minimal-base
 Base styles; an alternative for when frameworks are too comprehensive. This is work in progress so make sure you do extensive testing before implementing in real project. 
 
-__Contains__ basic setup for typography, common elements, colors, media queries and halping classes. Theese files are meant to be edited and not overridden. 
+__Contains__ basic setup for typography, common elements, colors, media queries and halping classes. Theese files are meant to be edited. 
 
 __Does not contain__ grid, scripts &amp;  modules. 
 
