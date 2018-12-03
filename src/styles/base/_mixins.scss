@@ -1,0 +1,14 @@
+// Depends on variabled $queries
+@mixin media($query) { 
+
+  @if map-has-key($queries, $query) {
+    @media #{map-get($queries, $query)} {
+      @content;
+    }
+  }
+
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$query}`. "
+        + "Please make sure it is defined in `$queries` map.";
+  }
+}

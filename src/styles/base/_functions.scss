@@ -1,0 +1,36 @@
+// Get color, depends on variable $color
+// usage: background-color: color(primary, light);
+// default shade is 'base' so color(primary) will work
+@function color($base, $shade: 'base') {
+
+  @if map-has-key($color, $base) {
+  	@if map-has-key(map-get($color, $base), $shade) {
+    	@return map-get(map-get($color, $base), $shade);
+    }
+    @warn "Unknown `#{$shade}` in $colors.";
+  	@return null;
+  }
+
+  @warn "Unknown `#{$base}` in $colors.";
+  @return null;
+}
+
+// Get font, depends on variable $font
+@function font($key) {
+  @if map-has-key($font, $key) {
+    @return map-get($font, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $colors.";
+  @return null;
+}
+
+// Get breakpoint, depends on variable $breakpoint
+@function breakpoint($key) {
+  @if map-has-key($breakpoint, $key) {
+    @return map-get($breakpoint, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $breakpoint.";
+  @return null;
+}

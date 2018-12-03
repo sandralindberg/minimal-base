@@ -1,0 +1,187 @@
+/* STYLEGUIDES */
+  body {
+    font-size: 62.5%;
+  }
+  section {
+    background: rgba(0, 0, 0, .05);
+    padding: 10px 20px;
+    margin: 10px 0;
+  }
+
+
+/* BRAND */
+  :root {
+    --primary: #f75c3d;
+    --primary-inv: #fff;
+    --secondary: #91d1bf;
+    --secondary-inv: #000;
+
+    --heading-font: Times;
+    --base-font: Arial;
+  }
+
+  body {
+    font-family: var(--base-font);
+  }
+
+  .example {
+    text-align: center;
+  }
+  .example--primary {
+    background: var(--primary);
+    color: var(--primary-inv);
+  }
+  .example--secondary {
+    background: var(--secondary);
+    color: var(--secondary-inv);
+  }
+
+  .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: var(--heading-font);
+    font-weight: 700;
+    line-height: 1;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+  .h1 {
+    font-size: 3.2rem;
+  }
+  .h2 {
+    font-size: 2.8rem;
+  }
+  .h3 {
+    font-size: 2.4rem;
+  }
+  .h4 {
+    font-size: 2.0rem;
+  }
+  .h5 {
+    font-size: 1.6rem;
+  }
+  .h6 {
+    font-size: 1.2rem;
+  }
+
+  .preamble {
+    font-size: 1.8rem;
+    font-style: italic;
+    font-weight: 300;
+  }
+  p {
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
+/* GRID */
+  .grid {
+    display: flex;
+    flex-direction: column;
+
+    display: grid;
+    grid-gap: 40px 40px;
+    margin: 0;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  [class^="col-"] {
+    min-height: 10px;
+    background: rgba(0, 0, 0, .1);
+    padding: 10px 5px;
+  }
+
+  .col-1 {
+    grid-column: span 1;
+  }
+  .col-2 {
+    grid-column: span 2;
+  }
+  .col-3 {
+    grid-column: span 3;
+  }
+  .col-4 {
+    grid-column: span 4;
+  }
+  .col-5 {
+    grid-column: span 5;
+  }
+  .col-6 {
+    grid-column: span 6;
+  }
+  .col-7 {
+    grid-column: span 7;
+  }
+  .col-8 {
+    grid-column: span 8;
+  }
+  .col-9 {
+    grid-column: span 9;
+  }
+  .col-10 {
+    grid-column: span 10;
+  }
+  .col-11 {
+    grid-column: span 11;
+  }
+  .col-12 {
+    grid-column: span 12;
+  }
+
+
+/* COMPONENTS */
+
+/* Buttons */
+  .btn {
+    /* Pos */
+    position: relative;
+
+    /* Layout */
+    display: block;
+    padding: 10px;
+    margin: 10px 0 0 0;
+
+    /* Style */
+    background: #fff;
+    border: 2px solid #fff;
+    font-weight: 700;
+  }
+
+  .btn-group {
+    margin: 0 -10px;
+  }
+
+  .btn-group .btn {
+    display: inline-block;
+    margin: 10px 10px 0 10px;
+  }
+
+  /* Position mod */
+
+  /* Layout mod*/
+  .btn.is-lg {
+    padding: 20px;
+  }
+
+  /* Style mod*/
+  .btn--primary {
+    background: var(--primary);
+    border: 2px solid var(--primary);
+    color: var(--primary-inv);
+  }
+
+  .btn--outline--primary {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+  }
+
+  .btn--secondary {
+    background: var(--secondary);
+    border: 2px solid var(--secondary);
+    color: var(--secondary-inv);
+  }
+
+  .btn--outline--secondary {
+    border: 2px solid var(--secondary);
+    color: var(--secondary);
+  }
+/* End Buttons */

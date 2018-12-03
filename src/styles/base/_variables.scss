@@ -1,0 +1,97 @@
+$base-spacing: 1rem;
+$base-border-radius: 5px;
+$base-font-size: 1.6rem;
+$base-font-color: #020202;
+
+// Breakpoints
+// default base for em in media queries is 16 px, divide prefered size with 16 to get em
+$breakpoint: (
+	xs: 22.5em, // 360px
+  sm: 47.5em, // 760px
+  md: 61.25em, // 960px
+  lg: 71.25em, // 1140px	
+  xl: 90em // 1440px
+);
+
+// Media queries 
+// depends on breakpoint-function which requires $breakpoint variable, 0.0625em === (1px / 16px base)
+$queries: (
+	xs: '(min-width: ' + breakpoint(xs) + ')',
+	xs-only: '(min-width: ' + breakpoint(xs) + ') and (max-width: ' + (breakpoint(sm) - 0.0625em) + ')',
+	xs-max: '(max-width: ' + (breakpoint(sm) - 0.0625em) + ')',
+	sm: '(min-width: ' + breakpoint(sm) + ')',
+	sm-only: '(min-width: ' + breakpoint(sm) + ') and (max-width: ' + (breakpoint(md) - 0.0625em) + ')',
+	sm-max: '(max-width: ' + (breakpoint(md) - 0.0625em) + ')',
+	md: '(min-width: ' + breakpoint(md) + ')',
+	md-only: '(min-width: ' + breakpoint(md) + ') and (max-width: ' + (breakpoint(lg) - 0.0625em) + ')',
+	md-max: '(max-width: ' + (breakpoint(lg) - 0.0625em) + ')',
+	lg: '(min-width: ' + breakpoint(lg) + ')',
+	lg-only: '(min-width: ' + breakpoint(lg) + ') and (max-width: ' + (breakpoint(xl) - 0.0625em) + ')',
+	lg-max: '(max-width: ' + (breakpoint(xl) - 0.0625em) + ')',
+	xl: '(min-width: ' + breakpoint(xl) + ')'
+);
+
+// Fonts
+// To get font use font-function, font(base);
+$font: (
+	base: Times,
+	heading: Arial
+);
+
+// Colors
+// To get color use color-function, color(primary, light); 
+// default shade is base so color(primary); will work
+// contrast is set to base-color
+$color: (
+	primary: (
+		base: #1abc9c,
+		light: lighten(#1abc9c, 30),
+		dark: darken(#1abc9c, 30),
+		contrast: #fff
+	),
+	secondary: (
+		base: #9b59b6,
+  	light: lighten(#9b59b6, 30),
+  	dark: #8e44ad,
+		contrast: #fff
+	),
+	tertiary: (
+		base: #e67e22,
+  	light: lighten(#e67e22, 30),
+  	dark: #d35400,
+  	contrast: #fff
+	),
+	gray: (
+		lightest: #fff,
+		light: #ecf0f1,
+		base: #95a5a6,
+		dark: #34495e,
+		darkest: #020202,
+		contrast: #fff
+	),
+	success: (
+	  base: #2ecc71,
+	  light: lighten(#2ecc71, 30),
+	  dark: #27ae60,
+	  contrast: #fff
+	),
+	info: (
+		base: #3498db,
+	  light: lighten(#3498db, 30),
+	  dark: #2980b9,
+	  contrast: #fff
+	),
+	warning: (
+		base: #f1c40f,
+		light: lighten(#f1c40f, 30),
+		dark: #f39c12,
+		contrast: #fff
+	),
+	error: (
+		base: #e74c3c,
+		light: lighten(#e74c3c, 30),
+		dark: #c0392b,
+		contrast: #fff
+	)
+);
+

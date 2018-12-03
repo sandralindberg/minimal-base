@@ -1,0 +1,48 @@
+// Hidden classes
+// depends on $queries variable
+// usade: .is-hidden--sm-only
+.is-hidden {
+	display: none;
+
+	@each $key, $query in $queries {	   
+	  &--#{$key} {
+	    @media #{$query} {
+	     	display: none;
+	    }
+	  }  
+	}
+}
+
+//visually-hidden
+.is-v-hidden {
+	position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+// Background classes and font-color
+.has-bg {
+	@each $key, $val in $color {   
+	  &--#{$key} {
+	    background-color: color($key);
+	    color: color($key, contrast);   
+	  }  
+
+	  @each $subkey, $subval in $val {   
+	  	@if $subkey != 'base' and $subkey != 'contrast' {
+	  		&--#{$key}-#{$subkey} {
+			    background-color: color($key, $subkey);
+			    @if $subkey == 'light' or $subkey == 'lightest' {
+						color: color(gray, darkest);  
+			    } 
+
+			    @else {
+			    	color: color($key, contrast);  
+			    }			     
+			  }  
+	  	}
+		}
+	}	
+}
